@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>JS SNES Emulator Shell</title>
+    <style>
+        body { background: #1a1a1a; color: white; font-family: sans-serif; display: flex; flex-direction: column; align-items: center; padding: 20px; }
+        #screen { 
+            background: #000; border: 4px solid #333; border-radius: 8px;
+            width: 512px; height: 448px; image-rendering: pixelated; 
+        }
+        .container { background: #2a2a2a; padding: 20px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.5); }
+        #gameInfo { margin-top: 15px; padding: 10px; background: #111; border-radius: 5px; font-family: monospace; font-size: 14px; color: #0f0; }
+        .controls { margin-top: 15px; display: flex; gap: 10px; align-items: center; }
+        input[type="file"] { color: #ccc; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>SNES JavaScript Shell</h2>
+        <canvas id="screen" width="256" height="224"></canvas>
+        
+        <div id="gameInfo">Aguardando carregamento da ROM...</div>
+
+        <div class="controls">
+            <input type="file" id="romLoader" accept=".sfc,.smc">
+            <button id="startBtn" disabled>Ligar Console</button>
+        </div>
+    </div>
+
+    <script src="emulator.js"></script>
+</body>
+</html>

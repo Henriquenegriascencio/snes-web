@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Emulador SNES WebAssembly</title>
+    <style>
+        body { 
+            background-color: #121212; 
+            color: white; 
+            font-family: Arial, sans-serif; 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            margin-top: 50px; 
+        }
+        /* O "Gabinete" da nossa TV virtual */
+        #emulador-container { 
+            width: 800px; 
+            height: 600px; 
+            max-width: 100%; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.8); 
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+    </style>
+</head>
+<body>
+    <h2>SNES web HTML</h2>
+    
+    <div id="emulador-container">
+        <div id="game"></div>
+    </div>
+
+    <script>
+        EJS_player = '#game'; // Diz onde o emulador deve aparecer
+        EJS_core = 'snes';    // Diz qual console queremos (ele vai baixar o core do SNES)
+        
+        // Link direto para os arquivos WebAssembly hospedados na nuvem
+        EJS_pathtodata = 'https://cdn.emulatorjs.org/stable/data/'; 
+        
+        EJS_color = '#00b050'; // Cor dos menus (um verde meio Luigi)
+    </script>
+    
+    <script src="https://cdn.emulatorjs.org/stable/data/loader.js"></script>
+</body>
+</html>
